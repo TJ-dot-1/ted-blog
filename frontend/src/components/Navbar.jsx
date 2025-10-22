@@ -10,7 +10,7 @@ const Navbar = () => {
       {/* Logo - Always on Left */}
       <img 
         onClick={() => navigate('/')} 
-        src="/images/ted.png"
+        src={assets.logo}
         alt="Logo" 
         className='w-20 sm:w-24 md:w-32 lg:w-36 xl:w-40 cursor-pointer transition-transform duration-200 hover:scale-105'
       />
