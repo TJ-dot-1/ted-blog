@@ -1,6 +1,8 @@
 Project Overview
 
 A modern, responsive blogging platform built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring AI-powered content generation, user authentication, and admin dashboard.
+
+Live link: https://ted-blog-5jqu.vercel.app
 🚀 Features
 Frontend
 
