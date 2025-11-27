@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Footer = () => {
   return (
-    <footer className='border-t border-gray-200 bg-white'>
+    <footer className='border-t border-gray-200 transition-colors duration-200' style={{ backgroundColor: 'var(--bg-color)', borderTopColor: 'var(--card-bg)' }}>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         {/* Main Footer Content */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'>
@@ -11,19 +11,21 @@ const Footer = () => {
           {/* Brand Column */}
           <div className='lg:col-span-1'>
             <div className='flex items-center mb-4'>
-              <img 
-                src={assets.logo} 
-                alt="TedBlog Logo" 
-                className='h-8 w-auto'
+              <img
+                src={assets.tblog}
+                alt="TedBlog Logo"
+                className='h-8 w-auto transition-all duration-200'
+                style={{
+                  filter: 'brightness(1.2) contrast(1.1)'
+                }}
               />
-              <span className='ml-2 text-xl font-bold text-gray-900'>TedBlog</span>
             </div>
-            <p className='text-gray-600 text-sm mb-4 leading-relaxed'>
-              Your go-to platform for sharing thoughts, ideas, and stories with the world. 
+            <p className='text-sm mb-4 leading-relaxed' style={{ color: 'var(--text-color)', opacity: 0.7 }}>
+              Your go-to platform for sharing thoughts, ideas, and stories with the world.
               Join our community of passionate writers and readers.
             </p>
             <div className='flex space-x-4'>
-              <a href="#" className='text-gray-400 hover:text-blue-600 transition-colors duration-200'>
+              <a href="#" className='hover:text-blue-600 transition-colors duration-200' style={{ color: 'var(--text-color)', opacity: 0.6 }}>
                 <svg className='w-5 h-5' fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
                 </svg>
@@ -48,39 +50,40 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className='text-lg font-semibold mb-4 text-gray-900'>Quick Links</h3>
+            <h3 className='text-lg font-semibold mb-4' style={{ color: 'var(--text-color)' }}>Quick Links</h3>
             <ul className='space-y-2'>
-              <li><a href="/" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Home</a></li>
-              <li><a href="/blogs" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>All Blogs</a></li>
-              <li><a href="/categories" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Categories</a></li>
-              <li><a href="/about" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>About Us</a></li>
-              <li><a href="/contact" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Contact</a></li>
+              <li><a href="/" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Home</a></li>
+              <li><a href="/blogs" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>All Blogs</a></li>
+              <li><a href="/categories" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Categories</a></li>
+              <li><a href="/about" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>About Us</a></li>
+              <li><a href="/contact" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Contact</a></li>
             </ul>
           </div>
 
           {/* Categories */}
           <div>
-            <h3 className='text-lg font-semibold mb-4 text-gray-900'>Categories</h3>
+            <h3 className='text-lg font-semibold mb-4' style={{ color: 'var(--text-color)' }}>Categories</h3>
             <ul className='space-y-2'>
-              <li><a href="/category/technology" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Technology</a></li>
-              <li><a href="/category/lifestyle" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Lifestyle</a></li>
-              <li><a href="/category/business" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Business</a></li>
-              <li><a href="/category/travel" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Travel</a></li>
-              <li><a href="/category/food" className='text-gray-600 hover:text-blue-600 transition-colors duration-200 text-sm'>Food</a></li>
+              <li><a href="/category/technology" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Technology</a></li>
+              <li><a href="/category/lifestyle" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Lifestyle</a></li>
+              <li><a href="/category/business" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Business</a></li>
+              <li><a href="/category/travel" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Travel</a></li>
+              <li><a href="/category/food" className='hover:text-blue-600 transition-colors duration-200 text-sm' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Food</a></li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3 className='text-lg font-semibold mb-4 text-gray-900'>Stay Updated</h3>
-            <p className='text-gray-600 text-sm mb-4'>
+            <h3 className='text-lg font-semibold mb-4' style={{ color: 'var(--text-color)' }}>Stay Updated</h3>
+            <p className='text-sm mb-4' style={{ color: 'var(--text-color)', opacity: 0.8 }}>
               Get the latest blogs delivered to your inbox
             </p>
             <div className='flex'>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Your email"
-                className='flex-1 px-3 py-2 bg-white border border-gray-300 rounded-l-lg text-gray-900 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
+                className='flex-1 px-3 py-2 border rounded-l-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500'
+                style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--card-bg)', color: 'var(--text-color)' }}
               />
               <button className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700  px-4 py-2 rounded-r-lg text-white text-sm font-medium transition-colors duration-200'>
                 Join
@@ -90,14 +93,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className='border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center'>
-          <p className='text-gray-600 text-sm'>
+        <div className='border-t pt-8 flex flex-col md:flex-row justify-between items-center' style={{ borderTopColor: 'var(--card-bg)' }}>
+          <p className='text-sm' style={{ color: 'var(--text-color)', opacity: 0.7 }}>
             © 2025 TedBlog. All rights reserved.
           </p>
           <div className='flex space-x-6 mt-4 md:mt-0'>
-            <a href="/privacy" className='text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200'>Privacy Policy</a>
-            <a href="/terms" className='text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200'>Terms of Service</a>
-            <a href="/cookies" className='text-gray-600 hover:text-blue-600 text-sm transition-colors duration-200'>Cookie Policy</a>
+            <a href="/privacy" className='hover:text-blue-600 text-sm transition-colors duration-200' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Privacy Policy</a>
+            <a href="/terms" className='hover:text-blue-600 text-sm transition-colors duration-200' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Terms of Service</a>
+            <a href="/cookies" className='hover:text-blue-600 text-sm transition-colors duration-200' style={{ color: 'var(--text-color)', opacity: 0.8 }}>Cookie Policy</a>
           </div>
         </div>
       </div>

@@ -24,15 +24,16 @@ const Layout = () => {
     }
 
     return (
-        <div className='min-h-screen bg-gray-50'>
+        <div className='min-h-screen transition-colors duration-200' style={{ backgroundColor: 'var(--bg-color)' }}>
             {/* Navbar */}
-            <div className='flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8 border-b border-gray-200 bg-white'>
+            <div className='flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8 border-b transition-colors duration-200' style={{ borderBottomColor: 'var(--card-bg)', backgroundColor: 'var(--card-bg)' }}>
                 {/* Left Section - Menu Button and Logo */}
                 <div className='flex items-center gap-4'>
                     {/* Mobile Menu Button */}
-                    <button 
+                    <button
                         onClick={toggleSidebar}
-                        className='lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200'
+                        className='lg:hidden p-2 rounded-lg transition-colors duration-200'
+                        style={{ color: 'var(--text-color)' }}
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -40,11 +41,14 @@ const Layout = () => {
                     </button>
                     
                     {/* Logo */}
-                    <img 
-                        src={assets.logo} 
-                        alt="TedBlog Logo" 
-                        onClick={() => navigate('/')} 
-                        className='w-28 sm:w-32 cursor-pointer transition-opacity duration-200 hover:opacity-80'
+                    <img
+                        src={assets.tblog}
+                        alt="TedBlog Logo"
+                        onClick={() => navigate('/')}
+                        className='w-28 sm:w-32 cursor-pointer transition-all duration-200 hover:opacity-80'
+                        style={{
+                          filter: 'brightness(1.2) contrast(1.1)'
+                        }}
                     />
                 </div>
                 

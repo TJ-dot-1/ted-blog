@@ -3,22 +3,35 @@ import { assets } from '../assets/assets'
 import { useAppContext } from '../context/useAppContext'
 
 const Navbar = () => {
-  const {navigate, token} = useAppContext()
+  const {navigate, token, theme, toggleTheme} = useAppContext()
 
   return (
     <div className='flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16'>
       {/* Logo - Always on Left */}
-      <img 
-        onClick={() => navigate('/')} 
-        src={assets.logo}
-        alt="Logo" 
-        className='w-20 sm:w-24 md:w-32 lg:w-36 xl:w-40 cursor-pointer transition-transform duration-200 hover:scale-105'
+      <img
+        onClick={() => navigate('/')}
+        src={assets.tblog}
+        alt="Logo"
+        className='w-20 sm:w-24 md:w-32 lg:w-36 xl:w-40 cursor-pointer transition-all duration-200 hover:scale-105'
+        style={{
+          filter: theme === 'dark' ? 'brightness(1.2) contrast(1.1)' : 'brightness(1) contrast(1)'
+        }}
       />
       
       {/* Right-side actions */}
       <div className='flex items-center gap-3'>
+        {/* Theme Toggle */}
+        <button
+          onClick={toggleTheme}
+          className='p-2 rounded-md transition-colors duration-200'
+          style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-color)' }}
+          aria-label='Toggle theme'
+        >
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
+
         {!token && (
-          <button onClick={() => navigate('/admin/signup')} className='py-2 px-4 text-sm font-medium rounded-md border border-blue-600 text-blue-600 hover:bg-blue-50'>
+          <button onClick={() => navigate('/admin/signup')} className='py-2 px-4 text-sm font-medium rounded-md border border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900'>
             Sign up
           </button>
         )}

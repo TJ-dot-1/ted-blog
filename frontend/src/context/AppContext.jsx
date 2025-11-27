@@ -15,6 +15,7 @@ export const AppProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const [input, setInput] = useState("");
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
     const fetchBlogs = async () => {
         try {
@@ -50,6 +51,17 @@ export const AppProvider = ({ children }) => {
             }
         }
     }, []);
+
+    // Theme effect
+    useEffect(() => {
+        const root = document.documentElement;
+        if (theme === 'dark') {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
     // Update axios headers when token changes
     useEffect(() => {
@@ -116,6 +128,10 @@ export const AppProvider = ({ children }) => {
         return () => axiosInstance.interceptors.response.eject(interceptor);
     }, [navigate, setToken]);
 
+    const toggleTheme = () => {
+        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    };
+
     const value = {
         axios: axiosInstance, // Provide the axios instance
         navigate,
@@ -131,7 +147,10 @@ export const AppProvider = ({ children }) => {
         setBlogs,
         input,
         setInput,
-        fetchBlogs
+        fetchBlogs,
+        theme,
+        setTheme,
+        toggleTheme
     };
 
     return (

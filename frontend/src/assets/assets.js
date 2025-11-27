@@ -14,6 +14,7 @@ import twitter_icon from './twitter_icon.svg'
 import logo from './logo.svg'
 import arrow from './arrow.svg'
 import logo_light from './logo_light.svg'
+import tblog from './tblog.png'
 import blog_icon from './blog_icon.png'
 import add_icon from './add_icon.svg'
 import list_icon from './list_icon.svg'
@@ -40,6 +41,7 @@ export const assets = {
     logo,
     arrow,
     logo_light,
+    tblog,
     blog_icon,
     add_icon,
     email_icon,
