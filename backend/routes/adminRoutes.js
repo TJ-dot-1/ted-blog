@@ -10,7 +10,7 @@ import {
 	deleteBlogById,
 	toggleBlogPublish,
 	getMe
-} from '../controllers/AdminController.js';
+} from '../controllers/adminController.js';
 import { getAllBlogs } from '../controllers/blogController.js';
 import auth from '../middleware/auth.js';
 

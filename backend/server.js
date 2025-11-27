@@ -1,7 +1,7 @@
 import express from 'express';
 import "dotenv/config";
 import cors from 'cors';
-import connectDB from './configs/db.js';
+import connectDB from './configs/database.js';
 import adminRouter from './routes/adminRoutes.js';
 import blogRouter from './routes/blogRoutes.js';
 
@@ -10,7 +10,18 @@ await connectDB();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://ted-blog-5jqu.vercel.app',
+    'https://ted-blog-neon.vercel.app'  
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 // Routes
